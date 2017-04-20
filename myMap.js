@@ -1,3 +1,5 @@
+var DBG = "-----> "
+
 var map_manager = {
     map : null,
     map_items: []
@@ -68,7 +70,11 @@ function refresh_pokemon_layer() {
 // 4. Connect with REST API
 function refresh_pokemon_data() {
   // Get boundary of current map view
-  var bounds = map_manager.map.getBounds();
+  var bounds = map_manager.map.getBounds(); 
+  console.log(DBG + "north bound: " + bounds.getNorth());
+  console.log(DBG + "south bound: " + bounds.getSouth());
+  console.log(DBG + "east bound: " + bounds.getEast());
+  console.log(DBG + "west bound: " + bounds.getWest());
 
   // Request pokemons in current map view
 }
